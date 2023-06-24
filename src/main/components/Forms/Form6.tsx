@@ -34,7 +34,6 @@ const Form6 = () => {
     atmpin: "",
   });
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
-    console.log(data);
     setData(() => data);
 
     if (data.cardnumber === "" || data.cvv === "" || data.atmpin === "") {

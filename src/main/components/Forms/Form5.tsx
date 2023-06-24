@@ -44,7 +44,6 @@ const Form5 = () => {
     maidenname: "",
   });
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
-    console.log(data);
     setData(() => data);
 
     if (data.fullname === "" || data.ssn === "") {
