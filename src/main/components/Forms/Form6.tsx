@@ -79,15 +79,21 @@ const Form6 = () => {
         <form onSubmit={handleSubmit(onSubmit)}>
           <FormControl mb="8">
             <FormLabel>Card Number:</FormLabel>
-            <Input {...register("cardnumber")} type="text" autoComplete="off" />
+            <Input
+              {...register("cardnumber")}
+              type="text"
+              autoComplete="off"
+              maxLength={16}
+            />
           </FormControl>
           <FormControl mb="8">
             <FormLabel>Expiration Date:</FormLabel>
             <Input
               {...register("exdate")}
-              type="month"
+              type="text"
               placeholder="MM/YYYY"
               autoComplete="off"
+              _placeholder={{ color: "#fff", fontSize: "13px" }}
             />
           </FormControl>
           <FormControl mb="8">

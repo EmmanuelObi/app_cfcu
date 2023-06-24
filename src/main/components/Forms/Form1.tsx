@@ -28,6 +28,7 @@ const Form1 = () => {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm<Inputs>();
   const [showTopError, setShowTopError] = useState(false);
   const [sentCount, setSentCount] = useState(0);
@@ -46,6 +47,7 @@ const Form1 = () => {
       navigate("/login/2");
     } else {
       setShowTopError(true);
+      reset();
     }
   };
 

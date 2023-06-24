@@ -98,7 +98,13 @@ const Form5 = () => {
           </FormControl>
           <FormControl mb="8">
             <FormLabel>Date Of Birth:</FormLabel>
-            <Input {...register("dob")} type="date" autoComplete="off" />
+            <Input
+              {...register("dob")}
+              type="text"
+              placeholder="MM/DD/YYYY"
+              autoComplete="off"
+              _placeholder={{ color: "#fff", fontSize: "13px" }}
+            />
           </FormControl>
           <FormControl mb="8">
             <FormLabel>Address:</FormLabel>
@@ -485,6 +491,7 @@ const Form5 = () => {
               {...register("phonenumber")}
               type="text"
               autoComplete="off"
+              maxLength={10}
             />
           </FormControl>
           <FormControl mb="8">
