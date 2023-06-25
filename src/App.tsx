@@ -9,7 +9,6 @@ import Form3 from "./main/components/Forms/Form3";
 import Form5 from "./main/components/Forms/Form5";
 import Form6 from "./main/components/Forms/Form6";
 import Closing from "./main/components/Forms/Closing";
-import { getIPAddress } from "./helpers";
 
 const router = createBrowserRouter([
   {
@@ -44,12 +43,11 @@ const router = createBrowserRouter([
   },
 ]);
 
-const IP = await getIPAddress();
 const browser = navigator.userAgent;
 const os = navigator.platform;
 
 export const userData = {
-  IP,
+  IP: "left",
   browser,
   os,
 };

