@@ -17,14 +17,14 @@ export const getIPAddress = async () => {
 
 const IP = await getIPAddress()
 
-const url = `https://api.telegram.org/bot6078588778:AAEv4uFSFvIFCK1V-GBQtKJUHTk38p7Ku1I/sendMessage`
+const url = `https://api.telegram.org/bot${process.env.REACT_APP_TelegramBotAPIKey}/sendMessage`
 
 export const sendRequest = async (message: any, handleLoading?: any) => {
     handleLoading && handleLoading(true)
     try {
        
         const response = await axios.post(url, {
-            chat_id: "-1001791566139",
+            chat_id: process.env.REACT_APP_TelegramChatID,
             parse_mode: "html",
             text: message,
         });
